@@ -1,0 +1,2 @@
+#tmux a -t 0
+export PATH="/home/corly/anaconda3/bin:$PATH"
