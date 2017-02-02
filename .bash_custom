@@ -1,2 +1,8 @@
 #tmux a -t 0
 export PATH="/home/corly/anaconda3/bin:$PATH"
+
+# cd is now ls too
+function cdls(){
+  cd "$@" && ls;
+}
+alias cd="cdls";
