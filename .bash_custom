@@ -8,7 +8,3 @@ function cdls(){
   cd "$@" && ls;
 }
 alias cd="cdls";
-
-# adds all ssh keys
-ssh-add ~/.ssh/*.rsa
-clear
