@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #tmux a -t 0
 export PATH="/home/corly/anaconda3/bin:$PATH"
 
@@ -6,3 +8,7 @@ function cdls(){
   cd "$@" && ls;
 }
 alias cd="cdls";
+
+# adds all ssh keys
+ssh-add ~/.ssh/*.rsa
+clear
