@@ -46,8 +46,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-export PS1="\[\e[00;36m\]\@\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;35m\]\u\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[00;33m\]\w\[\e[0m\]\[\e[00;37m\]>\[\e[0m\]"
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -98,10 +96,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Custom Stuff
-if [ -f ~/.bash_custom ]; then
-    . ~/.bash_custom
-fi
+######################### Custom Stuff #############################
 
+# cd + ls
+function cdls(){
+  cd "$@" && ls;
+}
+alias cd="cdls";
+
+# add all ssh key
+alias ssh_init="ssh-add ~/.ssh/*.rsa"
+
+# custom prompt
+export PS1="\[\e[00;36m\]\@\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;35m\]\u\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[00;33m\]\w\[\e[0m\]\[\e[00;37m\]>\[\e[0m\]"
+
+# use vim as default editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
