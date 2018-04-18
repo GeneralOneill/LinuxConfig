@@ -17,6 +17,9 @@ set foldnestmax=1
 set foldlevelstart=20
 nmap ds wbdw
 
+" Past Toggle
+set pastetoggle=<F2>
+
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
 if has("syntax")
